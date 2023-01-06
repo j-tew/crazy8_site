@@ -1,0 +1,45 @@
+html.sr #banner, #banner-logo, #helmet-img, .list-group-item, .img-fluid {
+    visibility: hidden;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #f8f9fa;
+    color: #298a3c;
+}
+
+#banner {
+    background-image: url('../img/bar-only.jpg');
+    background-size: cover;
+}
+#banner-logo {
+    height: 25vh;
+}
+
+#hours {
+    width: 280px; height: fit-content;
+}
+
+.fancy-font {
+    font-family: 'Pacifico', cursive;
+}
+
+.bg-green {
+    background-color: #298a3c;
+}
+
+.bg-yellow {
+    background-color: #f9b00b;
+}
+
+.border-green {
+    border: solid #298a3c 5px;
+}
+
+.link-green {
+    color: #298a3c;
+}
+
+.link-green:hover {
+    color: #42ba3b;
+}

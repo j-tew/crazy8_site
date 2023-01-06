@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- Title -->
+{% block title %}Crazy 8's Home{% endblock %}
+
+<!-- Set active nav item -->
+{% block navs %}
+<a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+<a class="nav-link" href="{% url 'menu' %}">Menu</a>
+<a class="nav-link" href="{% url 'events' %}">Events</a>
+<a class="nav-link" href="{% url 'photos' %}">Photos</a>
+{% endblock %}
+
+{% block content %}
+<!-- Banner -->
+<div id="banner" class="container-fluid p-0">
+  <div class="container-fluid bg-dark bg-opacity-75 text-light py-3">
+    <img
+      id="banner-logo"
+      src="{% static 'home/img/logos/multi_color_logo.png' %}"
+      alt="Multi Color Logo"
+    />
+    <div class="container col-md-6">
+      <br />
+      <p class="fs-4">
+        Your hometown sports bar with the longest bar in the square. Burgers,
+        Beer, and Wings! Where locals go loco! Let's get crazy at the 8's!
+      </p>
+    </div>
+  </div>
+</div>
+<!-- End Banner -->
+
+<!-- Specials -->
+<div class="container px-0 my-3">
+  <h1 class="fancy-font display-1 mb-5">Specials</h1>
+  <div class="row row-cols-1 row-cols-md-2 my-5 align-items-end">
+    <div class="col px-5">
+      <img
+        class="img-fluid rounded-top"
+        src="{% static 'home/img/cocktails.jpg' %}"
+        alt="Image of cocktails"
+      />
+      <div class="border-green border-top-0 rounded-bottom mx-auto">
+        <div class="bg-green text-light pt-2">
+          <h2 class="fancy-font">Early Bird</h2>
+          <p class="fs-5 fw-bold">
+            Monday through Friday<br />11 a.m. to 2 p.m.
+          </p>
+        </div>
+        <ul class="container w-75">
+          <li class="list-group-item my-3">
+            $3.88<br />Miller, Coors, Bud Light Drafts
+          </li>
+          <li class="list-group-item my-3">$6.88<br />Specialty Drinks</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col px-5">
+      <img
+        id="helmet-img"
+        class="my-4"
+        src="{% static 'home/img/clipart/crazy_helmet.png' %}"
+        alt="Football Helmet"
+        height="150"
+      />
+      <div class="border-green rounded mx-auto">
+        <div class="bg-green text-light">
+          <h2 class="fancy-font">Game Time</h2>
+          <p class="fs-5 fw-bold">While UNT or the Cowboys are playing</p>
+        </div>
+        <ul class="container w-75">
+          <li class="list-group-item my-3">
+            $3<br />Miller, Coors, Bud Light Drafts
+          </li>
+          <li class="list-group-item my-3">$4.50<br />Craft Drafts</li>
+          <li class="list-group-item my-3">$4.25<br />Imports</li>
+          <li class="list-group-item my-3">$4<br />Well Drinks</li>
+          <li class="list-group-item my-3">20% off<br />Appetizers</li>
+          <li class="list-group-item my-3">
+            50% off<br />Appetizers for an hour after the game if the Cowboys
+            win
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End Specials -->
+
+  <!-- Hours -->
+  <div class="col p-3">
+    <div id="hours" class="container border-green rounded-3 p-3 mb-5">
+      <h2 class="mb-3 fancy-font">Hours</h2>
+      <table class="table-borderless w-100">
+        <tbody>
+          <tr>
+            <td class="text-start">Sunday</td>
+            <td class="text-end">11 a.m. - 11 p.m.</td>
+          </tr>
+          <tr>
+            <td class="text-start">Monday</td>
+            <td class="text-end">11 a.m. - 11 p.m.</td>
+          </tr>
+          <tr>
+            <td class="text-start">Tuesday</td>
+            <td class="text-end">11 a.m. - 11 p.m.</td>
+          </tr>
+          <tr>
+            <td class="text-start">Wednesday</td>
+            <td class="text-end">11 a.m. - 11 p.m.</td>
+          </tr>
+          <tr>
+            <td class="text-start">Thursday</td>
+            <td class="text-end">11 a.m. - 11 p.m.</td>
+          </tr>
+          <tr>
+            <td class="text-start">Friday</td>
+            <td class="text-end">11 a.m. - 12 p.m.</td>
+          </tr>
+          <tr>
+            <td class="text-start">Saturday</td>
+            <td class="text-end">11 a.m. - 12 p.m.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- End Hours -->
+{% endblock %}

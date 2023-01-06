@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Crazy 8's Events{% endblock %}
+
+<!-- Set active nav item -->
+{% block navs %}
+<a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+<a class="nav-link" href="{% url 'menu' %}">Menu</a>
+<a class="nav-link active" href="{% url 'events' %}">Events</a>
+<a class="nav-link" href="{% url 'photos' %}">Photos</a>
+{% endblock %}
+
+{% block content %}
+<!-- Socials -->
+<div class="container my-5 fs-1">
+  <p>Catch all the latest news and updates by following us!</p>
+  <a
+    class="link"
+    href="https://m.facebook.com/Crazy8sSportsBarAndGrillDenton/?_rdr"
+    target="_blank"
+    ><i class="bi bi-facebook"></i
+  ></a>
+  <a
+    class="link-green"
+    href="https://instagram.com/crazy8sdenton?igshid=YmMyMTA2M2Y="
+    target="_blank"
+    ><i class="bi bi-instagram"></i
+  ></a>
+</div>
+
+<!-- Events -->
+<div class="container row mx-auto rounded-3 my-5 px-0 border-green shadow">
+  <!-- Weekly -->
+  <div class="col-md-6 p-3 bg-green text-light">
+    <h2 class="display-3 p-5 fancy-font">Weekly Events</h2>
+    <ul class="container w-75">
+      <li class="list-group-item mb-5">
+        <h3 class="mb-0">Monday</h3>
+        <p class="fs-5">Karaoke Night</p>
+      </li>
+      <li class="list-group-item mb-5">
+        <h3 class="mb-0">Tuesday</h3>
+        <p class="fs-5">Open Mic</p>
+      </li>
+      <li class="list-group-item mb-5">
+        <h3 class="mb-0">Wednesday</h3>
+        <p class="fs-5">Loco Ladies Night</p>
+      </li>
+      <li class="list-group-item mb-5">
+        <h3 class="mb-0">Thursday</h3>
+        <p class="fs-5">DJ Dance Party</p>
+      </li>
+      <li class="list-group-item mb-5">
+        <h3 class="mb-0">Fri, Sat, Sun</h3>
+        <p class="fs-5">Live music on the patio</p>
+      </li>
+    </ul>
+  </div>
+  <!-- Live Music -->
+  <div class="col-md-6 p-3">
+    <h1 class="display-3 p-5 fancy-font">Live Music</h1>
+    <ul>
+      {% if this_week %}
+
+        {% for event in this_week %}
+        <li class="list-group-item mb-5">
+          <h5>{{ event.date|date:"l, F j" }}</h5>
+          <h4>{{ event.title }}</h4>
+          <p>
+          {{ event.start_time|time:"f a" }} - {{ event.end_time|time:"f a" }}
+          </p>
+        </li>
+        {% endfor %}
+        
+      {% elif future_events %}
+
+        {% for event in future_events %}
+        <li class="list-group-item mb-5">
+          <h5>{{ event.date|date:"l, F j" }}</h5>
+          <h4>{{ event.title }}</h4>
+          <p>
+          {{ event.start_time|time:"f a" }} - {{ event.end_time|time:"f a" }}
+          </p>
+        </li>
+        {% endfor %}
+
+      {% else %}
+
+        <h1>It's quiet, too quiet...</h1>
+        
+      {% endif %}
+    </ul>
+  </div>
+</div>
+<!-- End Events -->
+{% endblock %}

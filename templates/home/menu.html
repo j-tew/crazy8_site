@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Crazy 8's Menu{% endblock %}
+
+<!-- Set active nav item -->
+{% block navs %}
+<a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+<a class="nav-link active" href="{% url 'menu' %}">Menu</a>
+<a class="nav-link" href="{% url 'events' %}">Events</a>
+<a class="nav-link" href="{% url 'photos' %}">Photos</a>
+{% endblock %}
+
+{% block content %}
+<!-- Food menu -->
+<div class="container-fluid px-0">
+  <h1 class="my-5 display-1 fancy-font">Food</h1>
+  <div class="container-fluid d-flex flex-wrap justify-content-around">
+    <img
+      class="img-fluid shadow"
+      src="{% static 'home/img/menus/menu_1.png' %}"
+    />
+    <img
+      class="img-fluid shadow"
+      src="{% static 'home/img/menus/menu_2.png' %}"
+    />
+  </div>
+</div>
+
+<!-- Drink menu -->
+<div class="container-fluid px-0">
+  <h1 class="my-5 display-1 fancy-font">Drinks</h1>
+  <div class="container-fluid d-flex flex-wrap justify-content-around bg-green">
+    <img
+      class="img-fluid shadow"
+      src="{% static 'home/img/menus/drinks_1.png' %}"
+    />
+    <img
+      class="img-fluid shadow"
+      src="{% static 'home/img/menus/drinks_2.png' %}"
+    />
+  </div>
+</div>
+{% endblock %}
