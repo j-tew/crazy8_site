@@ -4,9 +4,9 @@ A simple Django website for a local sports bar and grill in Denton. They closed 
 
 ### Installation
 1. Clone the repo
-`git clone https://github.com/j-tew/crazy8s_site.git`
+`git clone https://github.com/j-tew/crazy8_site.git`
 2. Go into the project directory
-`cd crazy8s_site`
+`cd crazy8_site`
 3. Create a virtual environment
 `python3 -m venv venv`
 4. Activate the virtual environment
